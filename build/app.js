@@ -11,8 +11,7 @@ const app = (0, express_1.default)();
 //setting app the middleware
 app.use(express_1.default.json());
 app.use((0, cors_1.default)());
-require('./config/mongoose')(app);
-// require("./config/db")(app)
+require("./config/db")();
 // getting routes
 require("./routes/routes")(app);
 const PORT = process.env.PORT;

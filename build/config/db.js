@@ -12,11 +12,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const pg_1 = require("pg");
 //connectinng to the database
 module.exports = () => __awaiter(void 0, void 0, void 0, function* () {
-    new pg_1.Pool({
+    let pool = new pg_1.Pool({
         user: "postgres",
         password: "postgres",
         host: "localhost",
         port: 5432,
         database: "catsdb"
     });
+    return pool;
 });
