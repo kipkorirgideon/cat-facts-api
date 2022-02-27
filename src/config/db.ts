@@ -1,15 +1,17 @@
-import { Application } from "express";
-import pg, { Pool } from "pg"
-
+import { Pool } from "pg"
+import dotenv from 'dotenv';
+dotenv.config()
 //connectinng to the database
 
 module.exports = async()=>{
     let pool = new Pool({
-        user:"postgres",
-        password:"postgres",
-        host:"localhost",
-        port:5432,
-        database:"catfactsdb"
+        user:process.env.user,
+        password:process.env.password,
+        host:process.env.host,
+        //@ts-ignore
+        port:process.env.port,
+        database:process.env.database
     })
+    console.log(`Connectd to postgres at http://${process.env.host}:${process.env.port}`);
     return pool   
 }
