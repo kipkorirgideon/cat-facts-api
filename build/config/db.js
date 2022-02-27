@@ -17,7 +17,7 @@ module.exports = () => __awaiter(void 0, void 0, void 0, function* () {
         password: "postgres",
         host: "localhost",
         port: 5432,
-        database: "catsdb"
+        database: "catfactsdb"
     });
     return pool;
 });

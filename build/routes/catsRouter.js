@@ -19,13 +19,17 @@ module.exports = (app) => __awaiter(void 0, void 0, void 0, function* () {
             return res.status(200).json(cats);
         return res.status(404).json({ message: 'Invalid request' });
     })),
-        app.post(`${baseRoute}/:id`, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+        app.post(`${baseRoute}`, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+            const data = yield catscontroller.addCatFacts(req);
+            if (data)
+                return res.status(200).json(data);
+            return res.status(404).send({ message: 'Invalid request' });
         })),
         app.put(`${baseRoute}/:id`, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             const data = yield catscontroller.updateCatFacts(req);
             if (data)
                 return res.status(200).json(data);
-            return res.status(404).json({ message: 'Invalid request' });
+            return res.status(404).send({ message: 'Invalid request' });
         })),
         app.delete(`${baseRoute}/:id`, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             const data = yield catscontroller.deleteCatFact(req);

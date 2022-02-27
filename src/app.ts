@@ -5,9 +5,8 @@ dotenv.config()
 const app = express()
 
 //setting app the middleware
-app.use(express.json())
 app.use(cors())
-require("./config/db")()
+app.use(express.json())
 
 // getting routes
 require("./routes/routes")(app)

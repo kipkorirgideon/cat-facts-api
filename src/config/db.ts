@@ -9,7 +9,7 @@ module.exports = async()=>{
         password:"postgres",
         host:"localhost",
         port:5432,
-        database:"catsdb"
+        database:"catfactsdb"
     })
-    return pool
+    return pool   
 }

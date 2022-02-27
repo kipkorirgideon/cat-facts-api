@@ -9,9 +9,8 @@ const cors_1 = __importDefault(require("cors"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 //setting app the middleware
-app.use(express_1.default.json());
 app.use((0, cors_1.default)());
-require("./config/db")();
+app.use(express_1.default.json());
 // getting routes
 require("./routes/routes")(app);
 const PORT = process.env.PORT;
