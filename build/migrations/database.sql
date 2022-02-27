@@ -1,0 +1,5 @@
+
+CREATE TABLE IF NOT EXISTS catstable(
+    id SERIAL PRIMARY KEY,
+    text VARCHAR(255)
+);

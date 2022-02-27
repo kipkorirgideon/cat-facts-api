@@ -1,7 +1,7 @@
 import { Application, Response, Request } from "express";
 import {CatController} from "../controllers/catsController"
 module.exports = async(app:Application)=>{
-    let baseRoute = '/cats'
+    let baseRoute = '/api/cats'
     const catscontroller = new CatController()
     app.get(`${baseRoute}`, async(req:Request, res:Response)=>{
         const cats = await catscontroller.getAllCatFacts(req)

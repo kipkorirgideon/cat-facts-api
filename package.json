@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "tsc --build",
+    "build": "tsc --build && cp -r ./src/migrations ./build",
     "clean": "tsc --build --clean",
     "start": "node ./build/app.js"
   },
